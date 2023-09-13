@@ -6,6 +6,7 @@ import Card from "./card";
 import { tests } from "./contacts";
 import Login from "./login";
 import Usestate_Practice from "./usestate-practice";
+import Todolist from "./todolist";
 
 var userIsRegistered = false;
 
@@ -20,7 +21,7 @@ function App() {
         
          <Login isUserRegistered={userIsRegistered} />
         */}
-        <Usestate_Practice />
+        <Todolist />
 
     </div>
 }

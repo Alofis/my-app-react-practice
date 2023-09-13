@@ -2,30 +2,42 @@ import React, { useState} from "react";
 
 function Usestate_Practice(){
 
-let [fullName, setFullName] = useState({
+let [ contact, setContact ] = useState({
     fName: "",
-    lName: ""
+    lName: "",
+    email: ""
 })
 
-function handleChange(event) {
-    console.log(event.target.value);
-    console.log(event.target.name);
-    const { name, value } = event.target;
+function handleChange(event){
+    let { name, value } = event.target;
+    // setContact(prevValue => {
+    //     if (name === "firstName") 
+    //     return {
+    //         fName: value,
+    //         lName: prevValue.lName,
+    //         email: prevValue.lName
+    //     };
+    //      else if (name === "lastName") 
+    //      return{
+    //         fName: prevValue.fName,
+    //         lName: value,
+    //         email: prevValue.email
+    //     };
+    //     else if (name === "email")
+    //     return {
+    //         fName: prevValue.fName,
+    //         lName: prevValue.lName,
+    //         email: value
+    //     };
+    // })
 
-    setFullName(prevValue => {
-        if (name === "firstName"){
-            return {
-                fName: value,
-                lName: prevValue.lName
-            };
-        } else if ( name === "lastName") {
-            return {
-                fName: prevValue.fName,
-                lName: value
-            }
+    setContact(prevValue => {
+        return {
+            ...prevValue,
+            [name]: value,
         }
     })
-
+}
 
     // setFullName(prevValue => {
     //     name === "firstName" && { fName: value, lName: prevValue.lName};
@@ -35,19 +47,24 @@ function handleChange(event) {
     //         }
     //     }
     // })
-}
+
+
+    
 
 return (
     <div className="container">
         <div className="login-holder-items">
         <form className="login-form">
-        <h1>Hi{fullName.fName} {fullName.lName}</h1>
-        <input onChange={handleChange} name="firstName" value={fullName.fName} type="text" placeholder="Your name?" ></input>
-        <input onChange={handleChange} name="lastName" value={fullName.lName} type="text" placeholder="Your family name?"></input>
+        <h1>Hi {contact.fName} {contact.lName}</h1>
+        <p>{contact.email}</p>
+        <input onChange={handleChange} name="fName" value={contact.fName} type="text" placeholder="Your name?" ></input>
+        <input onChange={handleChange} name="lName" value={contact.lName} type="text" placeholder="Your family name?"></input>
+        <input onChange={handleChange} name="email" value={contact.email} type="text" placeholder="email?"></input>
         <button >Click</button>
         </form>
         </div>
     </div>
 )
 }
+
 export default Usestate_Practice;
