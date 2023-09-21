@@ -1,0 +1,68 @@
+.container {
+    display: grid;
+    justify-content: center;
+    background: rgb(86, 151, 195);
+    height: 100vh;
+}
+
+.login-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.login-holder-items {
+    background: transparent;
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.login-holder h1{
+    color: rgb(15, 28, 48);
+    margin-bottom: 10px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: full;
+    height: full;
+}
+
+.login-form input, button{
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    margin: 2px;
+}
+
+.login-form input{
+    background:rgba(187, 208, 223, 0.366);
+    box-shadow: none;
+}
+
+input[type="text"], input[type="password"], textarea {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+::placeholder {
+    color: black
+}
+
+button, input[type="submit"] {
+    background-color: rgb(197, 213, 217);
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
